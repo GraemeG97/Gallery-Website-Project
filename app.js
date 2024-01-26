@@ -11,7 +11,7 @@ let images = [
     alt: "Scottish Castle",
   },
   {
-    url: "https://images.unsplash.com/photo-1603104147308-73891c6be078?q=80&w=2864&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    url: "https://images.unsplash.com/photo-1633206876269-feee3e979a26?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     alt: "highland cow in a field",
   },
   {
@@ -25,7 +25,8 @@ const createThumbnails = (arrayOfImages) => {
     let imgElement = document.createElement("img");
 
     imgElement.src = image.url;
-    imgElement.alt - image.alt;
+    imgElement.alt = image.alt;
+    //think about for loop arrayOfImages.length adding image element.tabindex
 
     imgElement.addEventListener("click", () => {
       console.log(image.alt);

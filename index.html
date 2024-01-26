@@ -8,7 +8,14 @@
     <title>Gallery Website</title>
   </head>
   <body>
-    <div id="thumb-container"></div>
-    <div class="large-image" id="display"></div>
+    <main>
+    <section>
+      <div id="thumb-container" class="thumb-wrapper" tabindex="0"></div>
+    </section>
+      <div class="large-image" id="display" tabindex="0"></div>
+      <div id="announcer" aria-live="polite" class="visually-hidden" tabindex="0">
+        <button id="next" aria-label="Next image" tabindex="0"> > </button>
+        <button id="prev" aria-label="Prev image" tabindex="0"> < </button>
+    </main>
   </body>
 </html>

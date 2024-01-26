@@ -1,8 +1,85 @@
+body {
+  margin: 0;
+  padding: 0;
+  color: white;
+  background-color: lightgray;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+section {
+  display: flex;
+  width: 100vw;
+  /* height: 10vh; */
+  align-items: center;
+  justify-content: center;
+}
+
 @media (width >= 600px) {
-  .thumb-container {
-    flex-direction: column;
+  .thumb-wrapper {
+    flex-direction: row;
     flex-wrap: wrap;
     height: 90px;
     width: 400px;
+    position: absolute;
+    top: 5vh;
+    bottom: auto;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    color-scheme: dark;
+    justify-content: center;
   }
+}
+.thumb-wrapper {
+  display: flex;
+  flex-direction: row;
+  height: 12vh;
+  width: 70vw;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  border-radius: 4px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  color-scheme: dark;
+}
+
+.thumb-wrapper > img {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 90px;
+  padding: 2px;
+  cursor: pointer;
+}
+#display img {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  object-fit: cover;
+}
+button#next {
+  position: absolute;
+  top: 50vh;
+  right: 5vw;
+  border-radius: 50%;
+}
+button#prev {
+  position: absolute;
+  top: 50vh;
+  left: 5vw;
+  border-radius: 50%;
+}
+button {
+  border: 1px solid rgba(255, 255, 255, 0.679);
+  border-radius: 100%;
+  background-color: rgba(0, 0, 0, 0.135);
+  color: rgba(255, 255, 255, 0.679);
+  padding: 6px 10px;
+  z-index: 100;
+  cursor: pointer;
 }
