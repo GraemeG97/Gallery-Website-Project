@@ -1,6 +1,8 @@
 let thumbContainer = document.getElementById("thumb-container");
 let displayImage = document.getElementById("display");
 
+const announcer = document.getElementById("announcer");
+
 let images = [
   {
     url: "https://images.unsplash.com/photo-1665133178106-ef28e6f79864?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -12,7 +14,7 @@ let images = [
   },
   {
     url: "https://images.unsplash.com/photo-1633206876269-feee3e979a26?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    alt: "highland cow in a field",
+    alt: "Highland cow in a field",
   },
   {
     url: "https://images.unsplash.com/photo-1546706872-9c90b8d0c94f?q=80&w=2800&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -25,7 +27,7 @@ const createThumbnails = (arrayOfImages) => {
     let imgElement = document.createElement("img");
 
     imgElement.src = image.url;
-    imgElement.alt = image.alt;
+    imgElement.alt = image.alt_description;
     //think about for loop arrayOfImages.length adding image element.tabindex
 
     imgElement.addEventListener("click", () => {
@@ -42,8 +44,13 @@ function createDisplayImg(image) {
 
   let largeDisplayImg = document.createElement("img");
   largeDisplayImg.src = image.url;
-  largeDisplayImg.alt = image.alt;
+  largeDisplayImg.alt = image.alt_description;
 
   displayImage.appendChild(largeDisplayImg);
+  annouceAltText(image.alt_description);
 }
 createThumbnails(images);
+
+function annouceAltText(altText) {
+  announcer.textContent = `New image displayed: ${altText}`;
+}
